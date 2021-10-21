@@ -7,10 +7,16 @@
 
 import UIKit
 
-class LoginController: UIViewController {
+protocol LoginViewControllerDelegate {
+    func showLoginStatus(output: String)
+    func showError(errorMessage: String)
+}
 
+class LoginController: UIViewController {
+   
     // MARK: - Properties
     
+    var loginViewModel = LoginViewModel()
     private let logoImageview: UIImageView = {
         let logoImage = UIImageView()
         logoImage.contentMode = .scaleAspectFit
@@ -50,7 +56,7 @@ class LoginController: UIViewController {
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -58,21 +64,22 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginViewModel.delegate = self
         configureUI()
     }
     
     // MARK: - Selectors
   
-    @objc func handleLogin() {
-        
+    @objc func loginButtonTapped() {
+        loginViewModel.sendValue(from: emailTextField.text, passwordTextField: passwordTextField.text)
     }
         
     // MARK: - Helpers
-    
+
     func configureUI() {
         view.backgroundColor = .twitterBlue
         navigationController?.navigationBar.barStyle = .black
-        navigationController?.navigationBar.isHidden = true
+        //navigationController?.navigationBar.isHidden = true
         
         view.addSubview(logoImageview)
         logoImageview.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor)
@@ -89,6 +96,20 @@ class LoginController: UIViewController {
                      right: view.rightAnchor, paddingLeft: 32, paddingRight: 32)
         
     }
-    
-
 }
+extension LoginController: LoginViewControllerDelegate {
+   
+    func showLoginStatus(output: String) {
+        print(output)
+        emailTextField.text = ""
+        passwordTextField.text = ""
+        let controller = FeedController(collectionViewLayout: UICollectionViewFlowLayout())
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func showError(errorMessage: String) {
+        print(errorMessage)
+    }
+}
+
+
