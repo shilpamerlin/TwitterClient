@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol LoginViewModelDelegate {
-    func sendValue(from emailTextField: String?, passwordTextField: String?)
+    func sendValue(from emailTextField: String?, passwordTextField: String?) -> Bool
 }
 
 class LoginViewModel: LoginViewModelDelegate {
@@ -20,13 +20,16 @@ class LoginViewModel: LoginViewModelDelegate {
     var email = "shilpa", password = "123"
     // MARK: - LoginViewModelDelegate
     
-    func sendValue(from emailTextField: String?, passwordTextField: String?) {
-        guard let emailTextField = emailTextField?.lowercased() else { return }
-        guard let passwordTextField = passwordTextField else { return }
+    func sendValue(from emailTextField: String?, passwordTextField: String?) -> Bool{
+       guard let emailTextField = emailTextField?.lowercased() else { return false }
+       guard let passwordTextField = passwordTextField else { return false }
+        
         if emailTextField == email && passwordTextField == password {
             delegate?.showLoginStatus(output: "Login Sucessful")
+            return true
         } else {
             delegate?.showError(errorMessage: "Try again, incorrect username or password")
+            return false
         }
     }
 }

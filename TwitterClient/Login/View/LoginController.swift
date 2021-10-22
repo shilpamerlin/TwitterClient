@@ -79,7 +79,6 @@ class LoginController: UIViewController {
     func configureUI() {
         view.backgroundColor = .twitterBlue
         navigationController?.navigationBar.barStyle = .black
-        //navigationController?.navigationBar.isHidden = true
         
         view.addSubview(logoImageview)
         logoImageview.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor)

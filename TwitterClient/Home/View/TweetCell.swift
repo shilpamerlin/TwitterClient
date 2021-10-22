@@ -11,6 +11,9 @@ class TweetCell: UICollectionViewCell {
     
     // MARK: - Properties
     
+    var tweet: Tweet? {
+        didSet { configureCell() }
+    }
     private let profileImageview: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "profile")
@@ -31,6 +34,7 @@ class TweetCell: UICollectionViewCell {
     }()
     
     private var nameLabel = UILabel()
+    private var tweetDataLabel = UILabel()
     
     // MARK: - Lifecycle
     
@@ -48,20 +52,30 @@ class TweetCell: UICollectionViewCell {
         addSubview(stack)
         stack.anchor(top: profileImageview.topAnchor, left: profileImageview.rightAnchor,
                      right: rightAnchor, paddingLeft: 12, paddingRight: 12)
-        nameLabel.font = UIFont.systemFont(ofSize: 14)
-        nameLabel.text = "Shilpa Joy @hello"
-        
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 14)
+
         let underLineView = UIView()
         underLineView.backgroundColor = .systemGroupedBackground
         addSubview(underLineView)
         underLineView.anchor(left: leftAnchor, bottom: bottomAnchor,
                              right: rightAnchor, height: 1)
+        
+        tweetDataLabel.font = UIFont.systemFont(ofSize: 14)
+        addSubview(tweetDataLabel)
+        tweetDataLabel.anchor(top: topAnchor, right: rightAnchor, paddingTop: 12, paddingRight: 12)
+        
     }
     
     required init(coder: NSCoder) {
         fatalError("init (coder:) has not been implemented")
     }
-    // MARK: - Selectors
-    
+
     // MARK: - Helpers
+    
+    func configureCell() {
+        guard let tweet = tweet else { return }
+        nameLabel.text = tweet.name
+        captionLabel.text = tweet.tweetMessage
+        tweetDataLabel.text = tweet.tweetTime
+    }
 }
