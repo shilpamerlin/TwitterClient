@@ -3,7 +3,7 @@
 * Swift: 5
 * Architecture: MVVM
 * Dependencies: Core Data framework
-* Unit Testing: Wrote test cases to check the login functionality, saving and retreving data from Core Data 
+* Unit Testing: Wrote test cases to check the login functionality, saving and retreving data from Core Data. Also implemented UI testing for Login page
 ## Getting started
 * Open the TwitterClient in Xcode.
 * Run the app
