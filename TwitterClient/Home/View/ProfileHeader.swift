@@ -60,7 +60,7 @@ class ProfileHeader: UICollectionReusableView {
     
     private let usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "@hello"
+        label.text = "@Lorem"
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .lightGray
         return label

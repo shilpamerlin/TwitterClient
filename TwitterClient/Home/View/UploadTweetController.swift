@@ -91,7 +91,7 @@ class UploadTweetController: UIViewController {
         let dateTimeString = formatter.string(from: currentDataTime)
         print(dateTimeString)
         
-       feedViewModel.saveTweets(name: "Shilpa Joy @hello", tweetMessage: caption, tweetTime: dateTimeString)
+       feedViewModel.saveTweets(name: "Shilpa Joy @Lorem", tweetMessage: caption, tweetTime: dateTimeString)
         dismiss(animated: true, completion: nil)
         //feedViewModel.fetchTweets()
     }
