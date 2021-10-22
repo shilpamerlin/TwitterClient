@@ -93,7 +93,6 @@ class UploadTweetController: UIViewController {
         
        feedViewModel.saveTweets(name: "Shilpa Joy @Lorem", tweetMessage: caption, tweetTime: dateTimeString)
         dismiss(animated: true, completion: nil)
-        //feedViewModel.fetchTweets()
     }
     
 }

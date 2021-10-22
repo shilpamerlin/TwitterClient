@@ -107,7 +107,9 @@ extension LoginController: LoginViewControllerDelegate {
     }
     
     func showError(errorMessage: String) {
-        print(errorMessage)
+        let alert = UIAlertController(title: "Invalid Username or Password", message: "Username is shilpa@mail.com and password is 1234", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
 }
 

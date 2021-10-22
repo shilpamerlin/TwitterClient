@@ -17,7 +17,8 @@ class LoginViewModel: LoginViewModelDelegate {
     // MARK: - Properties
     
     var delegate: LoginViewControllerDelegate?
-    var email = "shilpa", password = "123"
+    var email = "shilpa@mail.com", password = "1234"
+   
     // MARK: - LoginViewModelDelegate
     
     func sendValue(from emailTextField: String?, passwordTextField: String?) -> Bool{

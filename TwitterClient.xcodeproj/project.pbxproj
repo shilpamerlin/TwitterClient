@@ -16,7 +16,7 @@
 		8D55531A2722166500A99628 /* Tweet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5553182722166500A99628 /* Tweet+CoreDataClass.swift */; };
 		8D55531B2722166500A99628 /* Tweet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5553192722166500A99628 /* Tweet+CoreDataProperties.swift */; };
 		8D55531F2722668400A99628 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55531E2722668400A99628 /* CoreDataTestStack.swift */; };
-		8D555325272275D100A99628 /* TestCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55532227226CCE00A99628 /* TestCoreData.swift */; };
+		8D555325272275D100A99628 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55532227226CCE00A99628 /* CoreDataTests.swift */; };
 		8D6ED4872720B8D60090017E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6ED4862720B8D60090017E /* Utilities.swift */; };
 		8D6ED48E2720E1C70090017E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6ED48D2720E1C70090017E /* LoginViewModel.swift */; };
 		8D6ED4922721102E0090017E /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6ED4912721102E0090017E /* TweetCell.swift */; };
@@ -30,6 +30,7 @@
 		8D71484B27209953003B1A22 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D71484A27209953003B1A22 /* LoginController.swift */; };
 		8D71484D27209AAF003B1A22 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D71484C27209AAF003B1A22 /* FeedController.swift */; };
 		8D71484F2720A90F003B1A22 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D71484E2720A90F003B1A22 /* Extensions.swift */; };
+		8DE3FA4527231C7200BD91A4 /* TestCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3FA4427231C7200BD91A4 /* TestCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +60,7 @@
 		8D5553182722166500A99628 /* Tweet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tweet+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8D5553192722166500A99628 /* Tweet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tweet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8D55531E2722668400A99628 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestStack.swift; sourceTree = "<group>"; };
-		8D55532227226CCE00A99628 /* TestCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreData.swift; sourceTree = "<group>"; };
+		8D55532227226CCE00A99628 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		8D6ED4862720B8D60090017E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		8D6ED48D2720E1C70090017E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8D6ED4912721102E0090017E /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		8D71484A27209953003B1A22 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		8D71484C27209AAF003B1A22 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		8D71484E2720A90F003B1A22 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8DE3FA4427231C7200BD91A4 /* TestCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,8 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				8D71482C272097D9003B1A22 /* LoginTests.swift */,
+				8D55532227226CCE00A99628 /* CoreDataTests.swift */,
 				8D55531E2722668400A99628 /* CoreDataTestStack.swift */,
-				8D55532227226CCE00A99628 /* TestCoreData.swift */,
+				8DE3FA4427231C7200BD91A4 /* TestCollectionView.swift */,
 			);
 			path = TwitterClientTests;
 			sourceTree = "<group>";
@@ -386,8 +389,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D555325272275D100A99628 /* TestCoreData.swift in Sources */,
+				8D555325272275D100A99628 /* CoreDataTests.swift in Sources */,
 				8D55531F2722668400A99628 /* CoreDataTestStack.swift in Sources */,
+				8DE3FA4527231C7200BD91A4 /* TestCollectionView.swift in Sources */,
 				8D71482D272097D9003B1A22 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

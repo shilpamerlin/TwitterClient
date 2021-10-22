@@ -38,10 +38,10 @@ class CoreDataStorage: NSManagedObject {
         return tweet!
     }
     
-    func fetchTweets(withMessage name: String) -> Tweet? {
-        let fetchRequest = NSFetchRequest<Tweet>(entityName: "tweetMessage")
+    func fetchTweets(withMessage message: String) -> Tweet? {
+        let fetchRequest = NSFetchRequest<Tweet>(entityName: "Tweet")
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "tweetMessage == %@", name)
+        fetchRequest.predicate = NSPredicate(format: "tweetMessage CONTAINS %@", message)
         
         do {
             let tweets = try context.fetch(fetchRequest)

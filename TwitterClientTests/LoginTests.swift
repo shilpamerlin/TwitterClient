@@ -22,7 +22,7 @@ class LoginTests: XCTestCase {
     }
 
     func testLogin() throws {
-        XCTAssertTrue(sut.sendValue(from: "shilpa", passwordTextField: "123"))
+        XCTAssertTrue(sut.sendValue(from: "shilpa@mail.com", passwordTextField: "1234"))
         XCTAssertFalse(sut.sendValue(from: "test", passwordTextField: "123"))
         
     }
